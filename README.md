@@ -3,6 +3,13 @@ Developed a regime-based quantitative trading strategy for U.S. equity index fut
 
 # Phase 2
 
+Machine Learning Enhancement:
+- XGBoost Filter on V1
+- XGBoost Filter on V4
+
+Portfolio Integration:
+- Unified Portfolio of ML-Enhanced Alpha Models
+
 ## Abstract
 
 This study extends the prior rule-based alpha framework (Phase 1) by integrating XGBoost as a machine learning (ML) entry filter on v1 and v4 models. We verify whether ML-based filtering can statistically improve the out-of-sample (OOS) Sharpe ratio of the rule-based variants on U.S. equity index futures.
