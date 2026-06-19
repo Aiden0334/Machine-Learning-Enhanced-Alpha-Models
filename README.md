@@ -337,5 +337,5 @@ The Walk-Forward Sharpe of 1.365 with authenticity 0.81 represents a statistical
 
 **Status**: Phase 1 (rule-based) completed. Phase 2 (ML enhancement) completed.
 
-**New Model**: Project 3 (multi-timeframe macro filter) planned.
+**New Model**: Project 3 (multi-timeframe macro layer - advanced state classifier) planned.
 
