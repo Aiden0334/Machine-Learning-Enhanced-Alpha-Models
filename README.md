@@ -292,13 +292,14 @@ Phase 2 verifies that XGBoost entry filtering on rule-based v1 and v4 models sta
 
 ```
 project/
-├── README.md                       # This document
-├── features_summary.md             # Features List
-├── ml_step1_logistic.py            # Logistic Model_1 (local)
-├── ml_step2_xgboost.py             # XGBoost Model_2 (local)
-├── ml_step3_final_model.py         # XGBoost Separated_v1_v4
-├── ml_step3_robustness.py          # 4 robustness validations
-└── forward_validation.py           # 14-month forward test
+├── README.md                         # This document
+├── features_summary.md               # Features List
+├── ml_step1_logistic.py              # Logistic Model_1 (local)
+├── ml_step2_xgboost.py               # XGBoost Model_2 (local)
+├── ml_step3_final_model.py           # XGBoost Separated_v1_v4
+├── ml_step3_robustness.py            # 4 robustness validations
+├── model_performance_comparison.py   # XGBoost Models Performance
+└── forward_validation.py             # 14-month forward test
 ```
 
 **Execution:**
