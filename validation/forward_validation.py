@@ -51,28 +51,11 @@ FILES = {
 }
 PRODUCTS = list(FILES.keys()) # MyKey
 
-# 백테스트 파라미터 (이전과 동일)
-WINDOW = 100
-COST = 0.0004
-ATR_LEN = 14
-BB_LENGTH = 20
-STOP_ATR = 4.0
-MOM_LOOKBACK = 10
-V1_VR_LOWER = 0.95
-V1_VR_UPPER = 1.05
-V1_TRAIL_ATR = 3.0
-V4_TRAIL_MOM = 3.0
-
-SHORT_Q = [2, 3, 4, 6, 8]
-LONG_Q = [10, 16, 21, 25, 30]
-Q_LIST = SHORT_Q + LONG_Q
-ROLL_Q = 800
-
-BBW_PERCENTILE_WINDOW = 100
-EXPANSION_Q = 0.80
-BAND_WALK_BARS = 5
-BAND_WALK_THRESHOLD = 3
-BAND_WALK_SIGMA = 1.5
+════════════════════════════════════════════════════════════════════════════════════════
+#
+# 백테스트 파라미터 (이전과 동일) (제외됨)
+#
+════════════════════════════════════════════════════════════════════════════════════════
 
 # Forward 경계
 TRAIN_END = pd.Timestamp("2025-04-03 23:59:59")
