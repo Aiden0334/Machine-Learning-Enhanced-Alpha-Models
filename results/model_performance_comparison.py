@@ -49,42 +49,30 @@ FILES = {
 }
 PRODUCTS = list(FILES.keys()) # MyKey
 
-# Data files are not included in this repository.
+
+════════════════════════════════════════════════════════════════════════════════════════
+# Data files and parameters are not included in this repository.
 # Users must provide their own continuous futures datasets.
 
 # 백테스트 파라미터 (동일 파라미터)
-WINDOW = 100        # Regime 안정성 확보 - short-term noise 제거 목적.
-COST = 0.0004       # 지수 선물 수수료 (왕복값)   
-ATR_LEN = 14        # ATR 길이
-BB_LENGTH = 20      # 볼린저밴드 길이 
-STOP_ATR = 4.0      # TAIL-RISK 최소화
-MOM_LOOKBACK = 10   # 모멘텀 전략 기준
-V1_VR_LOWER = 0.95  # MEAN-REVERSION / TREND 구간 분리 기준1
-V1_VR_UPPER = 1.05  # MEAN-REVERSION / TREND 구간 분리 기준2
-V1_TRAIL_ATR = 3.0  
-V4_TRAIL_MOM = 3.0
 
-SHORT_Q = [2, 3, 4, 6, 8]      # q=1 : 4시간봉, q=2: 8시간봉 (단기봉 기준)  
-LONG_Q = [10, 16, 21, 25, 30]  # 장기봉 기준
-Q_LIST = SHORT_Q + LONG_Q      # 샘플 추가 목적.
-ROLL_Q = 800                   """ regime 시장 상태 설명 위해 긴 기간 설정. + 작은 윈도우에서 노이즈 거르기 위함.
+
+
+# ROLL_Q =                   
+                               """ regime 시장 상태 설명 위해 긴 기간 설정. + 작은 윈도우에서 노이즈 거르기 위함.
                                This is not a tuned hyperparameter but a structural sample size chosen to ensure that stable distributional estimation of VR across multi-q-values, and that reduced sensibility to short-term microstructure noise,
                                and that regime classification robustness under the non-stationary conditions. """
 
 # BBW Regime Filter Layer (for Momentum Strategy) 
-BBW_PERCENTILE_WINDOW = 100    # Percentile 안정 구간 - REGIME SWITCHING 기준 단기/중기 변동성 분포가 균형된 구간. (노이즈 X, LAG 적음)
-EXPANSION_Q = 0.80             # BBW 기준 상위 20% 구간 for Regime Detection and signal frequency.
-BAND_WALK_BARS = 5             # 더 긴 봉 구간 늘리기 가능. (5개 기준 - directional pressure 확인 가능하다 생각함.)
-BAND_WALK_THRESHOLD = 3        # score threshold임. 3점 정도면 persistence okay!
-BAND_WALK_SIGMA = 1.5          # Midpoint for Volatility-Normalized Activation Threshold. 
 
 # Forward 경계
-TRAIN_END = pd.Timestamp("2025-04-03 23:59:59")    # 학습 기간 (2018년 to 2025년)
-TEST_START = pd.Timestamp("2025-04-04")            # 테스트 시작 기간.
+
 
 # ML
 THRESHOLD = 0.60      # edge가 보통 0.5 이상에서 나옴. 하지만, 0.55 to 0.6은 weakness함. 또한, false positive entry를 줄이기 위함임. 
 SEEDS = [10, 100, 1000, 10000, 100000]   # For Seed-Robustness Validation. (Multi-Seeds) 
+
+════════════════════════════════════════════════════════════════════════════════════════
 
 
 def variance_ratio(prices, q):
@@ -95,12 +83,6 @@ def variance_ratio(prices, q):
     q_rets = log_p[q:] - log_p[:-q] # variance reduction + smoothing, 
     return np.sum((q_rets - q * mu) ** 2) / (n * q) / var_1 # normal 구조. 
 
-    # It's for detect momentum and mean reversion regimes. 
-    """ VR 에서 1이 의미하는 것:
-    VR = 1 : 랜덤 워크, NO Auto-correlated
-    VR > 1 : Momentum / Trend Persistence
-    VR < 1 : Mean Reversion 
-    """
 
 
 # Multi-layer market state encoder.
