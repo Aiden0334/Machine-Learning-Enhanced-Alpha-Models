@@ -54,26 +54,7 @@ FIXED_THRESHOLD = 0.60
 
 def get_model():
     """XGBoost 또는 fallback"""
-    if USE_XGB:
-        return XGBClassifier(
-            n_estimators=200,
-            max_depth=4,
-            learning_rate=0.05,
-            subsample=0.8,
-            colsample_bytree=0.8,
-            random_state=42,
-            use_label_encoder=False,
-            eval_metric="logloss",
-            verbosity=0
-        )
-    else:
-        return GradientBoostingClassifier(
-            n_estimators=200,
-            max_depth=4,
-            learning_rate=0.05,
-            subsample=0.8,
-            random_state=42
-        )
+    # erased due to copyright issues.
 
 
 def compute_sharpe(returns, years):
@@ -313,7 +294,7 @@ def main():
     else:
         verdict = f"{model_name}이 Logistic보다 나쁨 ({xgb_vs_logistic:+.3f}) → 과적합 가능"
     
-    print(f"\n  ▶ {verdict}")
+    print(f"\n  {verdict}")
     print(f"\n  다음 단계 결정 가이드:")
     print(f"    - XGBoost 명확히 더 좋음 → Step 3 (분리 모델) 또는 GRU 가치 있음")
     print(f"    - XGBoost ≈ Logistic → 천장 도달, 종료 권장")
