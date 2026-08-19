@@ -7,14 +7,6 @@
   Test: 2025-04-04 ~ 2026-06-10 (진짜 forward, 약 14개월) 
   <첫 두달 FORWARD는 샘플 부족으로 1년치 늘렸음.>
 
-프로세스 과정
-  1. 전체 데이터 로드 + prep
-  2. v1, v4 거래 추출 (전체)
-  3. Forward 데이터 분리 (2026-04-04 이후)
-  4. v1 ML 학습 (~2025-04-03 거래로) → Forward v1 거래 필터
-  5. v4 ML 학습 (~2025-04-03 거래로) → Forward v4 거래 필터
-  6. 결과 측정 (5 seed 평균)
-
 비교
   베이스라인 (필터 X) vs ML 필터
   v1 단독, v4 단독, 50/50 합산
@@ -24,8 +16,6 @@
 - XGBoost filtering did not improve V1 performance.
 - XGBoost filtering improved V4 performance across multi-seeds. 
 - The V4 regime structure appeared more suitable for ML-based trade selection. 
-
-
 
 ═══════════════════════════════════════════════════════════════════
 """
