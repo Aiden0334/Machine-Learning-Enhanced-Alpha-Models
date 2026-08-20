@@ -11,16 +11,11 @@
 - entry_atr
 
 ## Regime Features
-- vr_16
-- vr_30
+- vr_regimes
 - short_vr
 - long_vr
 - vr_score
-- regime5_strong_mom
-- regime5_mom
-- regime5_neutral
-- regime5_rev
-- regime5_strong_rev
+- 5 regimes (diversity)
 
 ## Volatility Features
 - atr
