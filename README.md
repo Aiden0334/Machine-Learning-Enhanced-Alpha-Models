@@ -343,7 +343,7 @@ The Walk-Forward Sharpe of 1.365 with authenticity 0.81 represents a statistical
 ---
 **Version**: 2.0 (as of 2026-06) 
 
-**Status**: Phase 1 (rule-based) completed. Phase 2 (ML enhancement) completed.
+**Status**: Phase 1 (rule-based) completed. (private file, not shared) Phase 2 (ML enhancement) completed. (shared)
 
 **New Model**: Project 3 (multi-timeframe macro layer - advanced state classifier) planned.
 
